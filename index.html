@@ -20,22 +20,36 @@
 
         .hero {
             width: 100%;
-            background: linear-gradient(#fee140, #fa709a);
-            padding: 10px 0;
+            background: linear-gradient(90deg, #fee140, #fa709a);
+            padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .hero img {
-            width: 50px;
+            width: 60px;
             height: auto;
             vertical-align: middle;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hero img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
         }
 
         .hero .name {
             display: inline-block;
             font-size: 32px;
             color: white;
-            margin-left: 10px;
+            margin-left: 15px;
+            vertical-align: middle;
+            background: linear-gradient(90deg, #fa709a, #fee140);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .container {
@@ -107,16 +121,23 @@
 
         footer {
             margin-top: 20px;
-            padding: 10px 0;
+            padding: 20px 0;
             width: 100%;
-            background: linear-gradient(#fee140, #fa709a);
+            background: linear-gradient(90deg, #fa709a, #fee140);
             text-align: center;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
         }
 
         footer a {
             color: white;
             text-decoration: none;
             font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #25D366;
         }
 
         @media (max-width: 600px) {
@@ -193,7 +214,7 @@
     </div>
 
     <footer>
-        <a href="https://wa.me/5581982258462?text=%2AOl%C3%A1%2C+por+quanto+voc%C3%AA+faz+um+desse+pra+mim+%3F%2A"> <span>&#169;</span> Desenvolvedor BRUNO-IPTV 2023</a>
+        <a href="https://wa.me/5581982258462?text=Gostaria+de+saber+mais+sobre+os+planos">© 2024 Desenvolvedor BRUNO-PEACE</a>
     </footer>
 </body>
 
