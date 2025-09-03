@@ -2,219 +2,286 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <title>Planos</title>
-    <link rel="stylesheet" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <style>
-       body {
-            font-family: Arial, sans-serif;
-            background-color: #B87333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #333;
-        }
+  <meta charset="utf-8">
+  <title>Planos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .hero {
-            width: 100%;
-            background: linear-gradient(90deg, #fee140, #fa709a);
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+  <!-- Fonte e Ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        .hero img {
-            width: 60px;
-            height: auto;
-            vertical-align: middle;
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-        .hero img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
-        }
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+    
+    span {
+        color: yellow;
+    }
 
-        .hero .name {
-            display: inline-block;
-            font-size: 32px;
-            color: white;
-            margin-left: 15px;
-            vertical-align: middle;
-            background: linear-gradient(90deg, #fa709a, #fee140);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background: rgba(0, 0, 0, 0.6);
+    }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
+    nav img {
+      width: 50px;
+      border-radius: 50%;
+    }
 
-        .card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 100%;
-            max-width: 300px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
+    nav .name {
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+    }
 
-        .card:hover {
-            transform: scale(1.05);
-        }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+    }
 
-        .card-title {
-            font-size: 24px;
-            font-weight: bold;
-            background: linear-gradient(#fee140, #fa709a);
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-            margin-bottom: 10px;
-        }
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 20px;
+      border-radius: 16px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .card-subtitle {
-            font-size: 16px;
-            color: #777;
-            margin-bottom: 10px;
-        }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    }
 
-        .card-price {
-            font-size: 24px;
-            color: #238E23;
-            margin-bottom: 20px;
-        }
+    .card-title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
 
-        .card-button {
-            display: block;
-            width: 80%;
-            margin: 0 auto;
-            padding: 10px 20px;
-            background-color: #25D366;
-            color: #fff;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s, transform 0.3s;
-        }
+    .card-subtitle {
+      font-size: 16px;
+      color: #ddd;
+      margin-bottom: 15px;
+    }
 
-        .card-button:hover {
-            background-color: #128C7E;
-            color: #fff;
-            transform: scale(1.05);
-        }
+    .card p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
 
-        footer {
-            margin-top: 20px;
-            padding: 20px 0;
-            width: 100%;
-            background: linear-gradient(90deg, #fa709a, #fee140);
-            text-align: center;
-            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-        }
+    .card-price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #00ffcc;
+      margin-bottom: 15px;
+    }
 
-        footer a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
+    .card-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(45deg, #00c6ff, #0072ff);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
 
-        footer a:hover {
-            color: green;
-        }
+    .card-button:hover {
+      background: linear-gradient(45deg, #0072ff, #00c6ff);
+      transform: scale(1.05);
+    }
 
-        @media (max-width: 600px) {
-            .card {
-                width: 100%;
-                max-width: none;
-            }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      margin-top: 30px;
+    }
 
-            .hero .name {
-                font-size: 24px;
-            }
-        }
-   </style>
+    footer a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    /* Botão flutuante WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    /* FAQ */
+    .faq {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .faq h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+
+    .faq-item {
+      background: rgba(255, 255, 255, 0.1);
+      margin-bottom: 10px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 15px;
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding: 0 15px;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding: 15px;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+  </style>
 </head>
 
 <body>
-    <div class="hero">
-        <nav>
-            <img class="logon" src="https://image.winudf.com/v2/image1/Y29tLmpjYW5kcm9pZC51bmlvbmlwdHZicl9pY29uXzE1NDc3MTExMzdfMDE0/icon.png?w=184&fakeurl=1" alt="Logo">
-            <div class="name">
-                <strong>BRUNO IPTV</strong>
-            </div>
-        </nav>
+  <div class="hero">
+    <nav>
+      <img class="logon"
+        src="https://image.winudf.com/v2/image1/Y29tLmpjYW5kcm9pZC51bmlvbmlwdHZicl9pY29uXzE1NDc3MTExMzdfMDE0/icon.png?w=184&fakeurl=1"
+        alt="Logo">
+      <div class="name"><strong>BRUNO <span>STREAMING</span></strong></div>
+    </nav>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2 class="card-title"><i class="fas fa-tv"></i> PLANO BÁSICO</h2>
+      <h3 class="card-subtitle">30 DIAS</h3>
+      <p><strong>Canais SD, Canais HD</strong><br><br>App próprio: Android / Windows<br>Guia de programação<br>Suporte via WhatsApp</p>
+      <p class="card-price">R$25,00 / 1 mês</p>
+      <a href="https://api.whatsapp.com/send?phone=5581982258462&text=Quero%20fazer%20um%20teste%20do%20*Plano basico*" class="card-button">Quero um teste</a>
     </div>
 
-    <div class="container">
-        <div class="card">
-            <h2 class="card-title">PLANO BÁSICO</h2>
-            <h3 class="card-subtitle">30 DIAS</h3>
-            <p><strong>Canais SD, Canais HD</strong><br><br>App próprio: Android / Windows<br>Guia de programação<br>Suporte direto via whatsapp</p>
-            <p class="card-price">R$25,00/1mês</p>
-            <a href="https://api.whatsapp.com/send?phone=5581982258462&text=Quero%20fazer%20um%20teste%20do%20*Plano basico*" class="card-button">Quero um teste</a>
-        </div>
-
-        <div class="card">
-            <h2 class="card-title">PLANO TOP</h2>
-            <h3 class="card-subtitle">30 DIAS</h3>
-            <p><strong>Canais SD, Canais HD, Canais FHD</strong><br><br>VOD: Filmes e séries<br><br>App próprio: Android / Windows<br>Guia de programação<br>Suporte direto via whatsapp</p>
-            <p class="card-price">R$30,00/1mês</p>
-            <a href="https://api.whatsapp.com/send?phone=5581982258462&text=Quero%20fazer%20um%20teste%20do%20*Plano top*" class="card-button">Quero um teste</a>
-        </div>
-
-        <div class="card">
-            <h2 class="card-title">PLANO PREMIUM</h2>
-            <h3 class="card-subtitle">30 DIAS</h3>
-            <p><strong>Canais SD, Canais HD, Canais FHD, Canais 4K</strong><br><br>Conteúdo Adulto<br>VOD: Filmes e séries<br><br>App próprio: Android / Windows<br>Guia de programação<br>Suporte direto via whatsapp</p>
-            <p class="card-price">R$35,00/1mês</p>
-            <a href="https://api.whatsapp.com/send?phone=5581982258462&text=Quero%20fazer%20um%20teste%20do%20*Plano premium*" class="card-button">Quero um teste</a>
-        </div>
-
-        <div class="card">
-            <h2 class="card-title">PLANO 2 MESES</h2>
-            <h3 class="card-subtitle">60 DIAS</h3>
-            <p><strong>Qualquer um dos nossos planos</strong><br><br>Comprando 60 dias você paga apenas</p>
-            <p class="card-price">R$50,00/2mês</p>
-            <a href="https://api.whatsapp.com/send?phone=5581982258462&text=Quero%20fazer%20um%20teste%20do%20*Plano 2 meses*" class="card-button">Quero um teste</a>
-        </div>
-
-        <div class="card">
-            <h2 class="card-title">PLANO 3 MESES</h2>
-            <h3 class="card-subtitle">90 DIAS</h3>
-            <p><strong>Qualquer um dos nossos planos</strong><br><br>Comprando 90 dias você paga apenas</p>
-            <p class="card-price">R$75,00/3mês</p>
-            <a href="https://api.whatsapp.com/send?phone=5581982258462&text=Quero%20fazer%20um%20teste%20do%20*Plano 3 meses*" class="card-button">Quero um teste</a>
-        </div>
-
-        <div class="card">
-            <h2 class="card-title">PLANO 1 ANO</h2>
-            <h3 class="card-subtitle">365 DIAS</h3>
-            <p><strong>Qualquer um dos nossos planos</strong><br><br>Comprando 365 dias você paga apenas</p>
-            <p class="card-price">R$250,00/1ano</p>
-            <a href="https://api.whatsapp.com/send?phone=5581982258462&text=Quero%20fazer%20um%20teste%20do%20*Plano de 1 Ano*" class="card-button">Quero um teste</a>
-        </div>
+    <div class="card">
+      <h2 class="card-title"><i class="fas fa-bolt"></i> PLANO TOP</h2>
+      <h3 class="card-subtitle">30 DIAS</h3>
+      <p><strong>Canais SD, HD, FHD</strong><br><br>VOD: Filmes e séries<br>App próprio: Android / Windows<br>Guia de programação<br>Suporte via WhatsApp</p>
+      <p class="card-price">R$30,00 / 1 mês</p>
+      <a href="https://api.whatsapp.com/send?phone=5581982258462&text=Quero%20fazer%20um%20teste%20do%20*Plano top*" class="card-button">Quero um teste</a>
     </div>
 
-<footer>
-<a href="https://api.whatsapp.com/send?phone=5581982258462&text=Quero%20fazer%20um%20teste">© 2025 Desenvolvedor Bruno Silva</a>
-</footer>
+    <div class="card">
+      <h2 class="card-title"><i class="fas fa-crown"></i> PLANO PREMIUM</h2>
+      <h3 class="card-subtitle">30 DIAS</h3>
+      <p><strong>Canais SD, HD, FHD, 4K</strong><br><br>Conteúdo Adulto<br>VOD: Filmes e séries<br>App próprio: Android / Windows<br>Guia de programação<br>Suporte via WhatsApp</p>
+      <p class="card-price">R$35,00 / 1 mês</p>
+      <a href="https://api.whatsapp.com/send?phone=5581982258462&text=Quero%20fazer%20um%20teste%20do%20*Plano premium*" class="card-button">Quero um teste</a>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title"><i class="fas fa-gift"></i> PLANO 2 MESES</h2>
+      <h3 class="card-subtitle">60 DIAS</h3>
+      <p><strong>Qualquer um dos nossos planos</strong><br><br>Comprando 60 dias você paga apenas</p>
+      <p class="card-price">R$50,00 / 2 meses</p>
+      <a href="https://api.whatsapp.com/send?phone=5581982258462&text=Quero%20fazer%20um%20teste%20do%20*Plano de 2 meses*" class="card-button">Quero um teste</a>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title"><i class="fas fa-gem"></i> PLANO 3 MESES</h2>
+      <h3 class="card-subtitle">90 DIAS</h3>
+      <p><strong>Qualquer um dos nossos planos</strong><br><br>Comprando 90 dias você paga apenas</p>
+      <p class="card-price">R$75,00 / 3 meses</p>
+      <a href="https://api.whatsapp.com/send?phone=5581982258462&text=Quero%20fazer%20um%20teste%20do%20*Plano 3 meses*" class="card-button">Quero um teste</a>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title"><i class="fas fa-star"></i> PLANO 1 ANO</h2>
+      <h3 class="card-subtitle">365 DIAS</h3>
+      <p><strong>Qualquer um dos nossos planos</strong><br><br>Comprando 365 dias você paga apenas</p>
+      <p class="card-price">R$250,00 / 1 ano</p>
+      <a href="https://api.whatsapp.com/send?phone=5581982258462&text=Quero%20fazer%20um%20teste%20do%20*Plano de 1 Ano*" class="card-button">Quero um teste</a>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <h2>❓ Perguntas Frequentes</h2>
+    <div class="faq-item">
+      <div class="faq-question">📺 Preciso instalar algum aplicativo? <i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">Sim, o revendedor irá te passar o nome do aplicativo certinho para você instalar na sua smartv (Android / Windows).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">⏱ O suporte é rápido? <i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">Nosso suporte via WhatsApp responde em minutos, todos os dias da semana, das 10:00 as 23:00</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">💳 Quais formas de pagamento aceitam? <i class="fas fa-chevron-down"></i></div>
+      <div class="faq-answer">PIX</div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="https://api.whatsapp.com/send?phone=5581982258462">© 2025 Desenvolvedor Bruno Silva</a>
+  </footer>
+
+  <!-- Botão Flutuante -->
+  <a href="https://api.whatsapp.com/send?phone=5581982258462" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // FAQ Toggle
+    document.querySelectorAll(".faq-question").forEach(item => {
+      item.addEventListener("click", () => {
+        item.parentElement.classList.toggle("active");
+      });
+    });
+  </script>
 </body>
 </html>
